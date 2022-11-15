@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+  		<meta charset="UTF-8">
+  
+    
+  		<title>BAJA ALLIANZ INSURANCE</title>
+			<style>
+				#example {
+   			 		border: 2px solid black;
+  			 		padding: 25px;
+    			 		background-repeat: no-repeat;
+			 		background-size: auto;
+			 		background-image:url("C:\Users\MahaGaNapathi\Downloads\LIVE\BAJAJALLIANZ\static\images\insurance-company.jpg");
+					}
+			</style>
+	
+	</head>
+ 
+<body>
+
+      <!-- Show Insurance Company banner-->
+     
+  
+    <div id="example" style="color:blue">
+	 <img src="C:\Users\MahaGaNapathi\Downloads\LIVE\BAJAJALLIANZ\static\images\insurance-company.jpg" alt="BAJAJ" style="width:100%;height:100%"> 
+	
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Insurance Product Category</h2>
+            <h3>Customer Age</h3><input id="first" name="AGE" type="number"><br>
+            <h3>Customer's occupation is Business</h3><select name="OCCUPATION_business" id="second" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+	
+	    <h3>Customer's quality score is above 5/10</h3><select name="QUALITY_SCORE_BAND_5" id="third" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+
+	    <h3>Customer's annual salary is around 3 LPA</h3><select name="INCOME_SEGMENT_3" id="fourth" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+ 
+	    <h3>Customer's annual salary is around 5 LPA</h3><select name="INCOME_SEGMENT_5" id="fifth" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+
+	    <h3>Customer live in East India</h3><select name="INDIAN_REGION_East" id="sixth" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+
+	    <h3>Customer live in North India</h3><select name="INDIAN_REGION_North" id="seventh" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+
+	    <h3>Customer's Annual Prosperity rate is Medium</h3><select name="PROSPERITY_INDEX_BAND_Medium" id="eigth" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+
+	    <h3>Policy Issuance Year 2022</h3><select name="ISSUANCE_YEAR_2022" id="Ninth" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+
+	    <h3>Fourth Quarter</h3><select name="QTR_Q4" id="Tenth" type="number" required="required"><br>
+                <option value=0> No </option>
+                <option value=1> Yes </option>
+            </select>
+           
+            <br><br><button id="sub" type="submit "> Suitable Insurance Product for Customer</button>
+            <br>
+
+        </form>
+
+         
+       <!-- Show predicted output using ML model --> 
+       <div>
+           <center>
+               <h1>{{ prediction_text }}</h1>
+           </center>
+       </div>
+
+     </div>
+
+</body>
+</html>
+
