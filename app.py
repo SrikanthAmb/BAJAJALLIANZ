@@ -12,7 +12,7 @@ bst_model=pickle.load(open("model.pkl",'rb'))
 @app.route('/',methods=['GET'])
 
 def home():
-    return render_template('home.html')
+    return render_template('BAJAJ.html')
 
 @app.route("/predict",methods=['POST'])
 
@@ -29,9 +29,9 @@ def predict():
             s='term'
         return s
 
-    Answer=zen(output[0])
+    Answer=zen(output)
     
-    return render_template('home.html',prediction_text="Will I get loan ? {}".format(Answer))
+    return render_template('BAJAJ.html',prediction_text="Suitable Insurance Product is {}".format(Answer))
 
 if __name__=="__main__":
     app.run(debug=True)
